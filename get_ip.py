@@ -41,9 +41,9 @@ def get_ip_by_httpbin():
 # 这个函数可以在本地 DNS 遭受污染的时候获取到IP
 # 如需模拟DNS污染，可以在HOSTS文件里加入 127.0.0.1 www.httpbin.org
 def get_ip_by_httpbin_direct_1():
-    url = 'http://52.5.182.176/ip'
+    url = 'http://s.i3long.cn/getip'
     try:
-        req = request.Request(url=url, method='GET', headers={'Host': 'www.httpbin.org'})
+        req = request.Request(url=url, method='GET', headers={'Host': 's.i3long.cn'})
         resp = request.urlopen(req).read()
         return regex_ip.match(resp.decode("utf-8")).group(1)
     except Exception as e:
@@ -51,9 +51,9 @@ def get_ip_by_httpbin_direct_1():
         return None
 
 def get_ip_by_httpbin_direct_2():
-    url = 'http://52.44.230.61/ip'
+    url = 'http://66.112.212.135/getipip'
     try:
-        req = request.Request(url=url, method='GET', headers={'Host': 'www.httpbin.org'})
+        req = request.Request(url=url, method='GET', headers={'Host': 's.i3long.cn'})
         resp = request.urlopen(req).read()
         return regex_ip.match(resp.decode("utf-8")).group(1)
     except Exception as e:
